@@ -1,38 +1,78 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+:root{
+  --principal:#272b35;
+  --secundario:#F5F5F5;
+  --tercer:#F61067;
+  --cuarto:#962557;
+}
+body{
+  background-color: var(--principal);
+  color:var(--secundario);
+}
+.central{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.circulo{
+  background-color: var(--principal);
+  width: 65vw;
+  height: 65vw;
+  line-height: 65vw;
+  text-align: center;
+  margin: 30vw auto;
+  border-radius: 50%;
+  box-shadow: rgba(255,255,255,0) 0px 0px 0vw 0vw inset,0 0 12vw 0px rgba(0,0,0,0.3);
+  font-size: 18vw;
+  font-weight: 600;
+  user-select: none;
+  border: 1.5vw solid var(--tercer);
+  transition: 0.2s ;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.animacion{
+  
+  box-shadow: rgba(255, 255, 255,0.15) 0px 0vw 0vw 32.5vw inset,0 0 12vw 0px rgba(0,0,0,0.3);
+  transition: 0s;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.ms{
+  font-size: 10vw;
 }
-
-.App-link {
-  color: #61dafb;
+.boton i{
+  color: var(--secundario);
+  font-size:8vw;
+  margin-left: 2vw;
+  line-height: 17vw;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.boton{
+  margin: auto;
+  border-radius: 50%;
+  width: 17vw;
+  height: 17vw;
+  cursor: pointer;
+  border: none;
+  /*background-color: var(--tercer);*/
+  background:linear-gradient(30deg,var(--cuarto) ,var(--tercer));
+  /*box-shadow: 0 0 5vw 0px rgba(0,0,0,0.2);*/
+  box-shadow: rgba(255,255,255,0) 0px 0px 0vw 0vw inset,0 0 5vw 0px rgba(0,0,0,0.5);
+  transition: 0.3s ;
+  
+}
+.boton:active{
+  box-shadow: rgba(255,255,255,0.35) 0px 0vw 0vw 8vw inset,0 0 5vw 0px rgba(0,0,0,0.5);
+  transition: 0s;
+}
+button{
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
