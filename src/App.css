@@ -19,37 +19,81 @@ body{
 .central{
   text-align: center;
 }
-.circulo{
-  background-color: var(--principal);
+.contenedor-circulo{
   width: 65vw;
   height: 65vw;
-  line-height: 65vw;
-  text-align: center;
   margin: 30vw auto;
+  font-size: 27vw;
+  transition: font-size 0.03s linear;
+}
+.contenedor-circulo.small{
+  
+  font-size: 19vw;
+  transition: font-size 0.8s ease-in-out;
+}
+.circulo{
+  background-color:transparent;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  box-shadow: rgba(255,255,255,0) 0px 0px 0vw 0vw inset,0 0 12vw 0px rgba(0,0,0,0.3);
-  font-size: 18vw;
+  /*box-shadow: rgba(255,255,255,0) 0px 0px 0vw 0vw inset,0 0 12vw 0px rgba(0,0,0,0.3);*/
+  box-shadow:rgba(255,255,255,0) 0px 0px 0vw 0vw inset ;
   font-weight: 600;
   user-select: none;
-  border: 1.5vw solid var(--tercer);
-  transition: 0.2s ;
+  border: 2vw solid var(--tercer);
+  transition:box-shadow 0.2s;
+  position: relative;
+  box-sizing: border-box;
+}
+.circulo::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow:
+  rgba(0,0,0,0.6) 0vw 6vw 10vw -5vw inset,rgba(0,0,0,0.6) 0vw 6vw 10vw -2vw ;
 }
 .animacion{
-  
-  box-shadow: rgba(255, 255, 255,0.15) 0px 0vw 0vw 32.5vw inset,0 0 12vw 0px rgba(0,0,0,0.3);
-  transition: 0s;
+  transition:box-shadow 0s;
+  box-shadow: rgba(255, 255, 255,0.1) 0px 0vw 0vw 32.5vw inset;
+}
+.contador{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 0 0.2rem var(--tercer) ;
+  transition: text-shadow 0.2s ease;
+}
+.contador.pausa{
+  text-shadow: 0 0 0.6rem var(--tercer) ;
 }
 .ms{
-  font-size: 10vw;
+  font-size: 50%;
 }
+.contenedor-botones{
+  transition: 0.3s ;
+  height: 17vw;
+  width: 50vw;
+  margin: auto;
+  position:relative;
+}
+
 .boton i{
   color: var(--secundario);
   font-size:8vw;
-  margin-left: 2vw;
   line-height: 17vw;
 }
+.boton i.fa-play{
+  
+  margin-left: 2vw;
+}
 .boton{
-  margin: auto;
+  position: absolute;
   border-radius: 50%;
   width: 17vw;
   height: 17vw;
@@ -58,12 +102,35 @@ body{
   /*background-color: var(--tercer);*/
   background:linear-gradient(30deg,var(--cuarto) ,var(--tercer));
   /*box-shadow: 0 0 5vw 0px rgba(0,0,0,0.2);*/
-  box-shadow: rgba(255,255,255,0) 0px 0px 0vw 0vw inset,0 0 5vw 0px rgba(0,0,0,0.5);
-  transition: 0.3s ;
+  box-shadow: rgba(255,255,255,0) 0px 0px 0vw 0vw inset,0 0.3rem 5vw 0px rgba(0,0,0,0.5);
   
+  right: 50%;
+  transform: translate(50%,0) scale(1,1);
+  transition: box-shadow 0.3s, right 0.2s ease,opacity 0.2s ease, transform 0.2s ease;
+  z-index: 2;
 }
-.boton:active{
-  box-shadow: rgba(255,255,255,0.35) 0px 0vw 0vw 8vw inset,0 0 5vw 0px rgba(0,0,0,0.5);
+.stop{
+  opacity: 0;
+}
+.vuelta{
+  opacity: 0;
+  z-index: 1;
+}
+.derecha{
+  transform: translate(50%,0) scale(0.7,0.7);
+  right: 0%;
+  opacity: 1;
+}
+.izquierda{
+  transform: translate(50%,0) scale(0.7,0.7);
+  right: 100%;
+  opacity: 1;
+}
+.transparente{
+  opacity: 0;
+}
+.animacion-boton{
+  box-shadow: rgba(255,255,255,0.35) 0px 0vw 0vw 8.5vw inset,0 0 5vw 0px rgba(0,0,0,0.5);
   transition: 0s;
 }
 button{
@@ -75,4 +142,14 @@ button{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+@media only screen and (min-width: 768px) {
+  .contenedor-circulo{
+    width: 25rem;
+    height: 25rem;
+    margin:0;
+  }
+  .boton{
+    margin:0;
+  }
 }

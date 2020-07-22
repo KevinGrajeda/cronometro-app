@@ -8,18 +8,28 @@ class Display extends React.Component{
         }
     }
     render(){
-        
-        const segundos=Math.floor(this.props.ms/1000);
-        const milisegundos=(this.props.ms-(segundos*1000))/10|0;
+        let ms=this.props.ms;
+        const minutos=(ms/60000)|0;
+        ms=ms-minutos*60000;
+        const segundos=(ms/1000)|0;
+        ms=(ms-segundos*1000)/10|0;
+        const classContador="contador"+(this.props.pausa && this.props.iniciado ?" pausa":"");
+        const classContenedor="contenedor-circulo"+(minutos>0|| segundos>58?" small":"");
         return(
-        <div 
-            className={this.state.touch?"circulo animacion ":"circulo"}
-            onTouchStart={()=>this.setState({touch:true})} 
-            onClick={this.props.handleClick} 
-            onTouchEnd={evt=>{this.setState({touch:false})
-                this.props.handleClick(evt)}} >
-            <span>{segundos}</span><span className="ms">{milisegundos>=10?milisegundos:"0"+milisegundos}</span>
-        </div>
+            <div className={classContenedor}>
+                <div 
+                    className={this.state.touch?"circulo animacion ":"circulo"}
+                    onTouchStart={()=>this.setState({touch:true})} 
+                    onClick={this.props.handleClick} 
+                    onTouchEnd={evt=>{this.setState({touch:false})
+                        this.props.handleClick(evt)}} >
+                    <div className={classContador}>
+                        <span>{minutos>0?minutos+":":""}</span>
+                        <span>{minutos>0?segundos>=10?segundos:"0"+segundos:segundos}</span>
+                        <span className="ms">{ms>=10?ms:"0"+ms}</span>
+                    </div>
+                </div>
+            </div>
     )
     }
 }
