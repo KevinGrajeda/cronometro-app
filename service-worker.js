@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cronometro-app/precache-manifest.72dab8a035539c974e17d4688e12fbcd.js"
+  "/cronometro-app/precache-manifest.83c4ddacc80ed6f8db098540d3759aff.js"
 );
 
 self.addEventListener('message', (event) => {
