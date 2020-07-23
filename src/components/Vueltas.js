@@ -12,19 +12,20 @@ class Vueltas extends React.Component{
         }
         return true
     }
-    imprimirHora(min,seg,ms){
-        min=min<10?''+min:min;
+    imprimirHora(hrs,min,seg,ms){
+        hrs=hrs>0?hrs+"h":"";
+        min=min<10?'0'+min:min;
         seg=seg<10?'0'+seg:seg;
         ms=ms<10?'0'+ms:ms;
-        return `${min} ${seg}.${ms}`
+        return `${hrs} ${min} ${seg}.${ms}`
     }
     render(){
         const vueltas=this.props.vueltas.map((vuelta,id)=>{
             return(
                 <li key={id+1}>
                     <span className="numero-vuelta">Vuelta {id+1}&nbsp;&nbsp;&nbsp;</span>
-                    {this.imprimirHora(vuelta.previo.minutos,vuelta.previo.segundos,vuelta.previo.ms)}&nbsp;&nbsp;
-                    {this.imprimirHora(vuelta.actual.minutos,vuelta.actual.segundos,vuelta.actual.ms)}
+                    {this.imprimirHora(vuelta.previo.horas,vuelta.previo.minutos,vuelta.previo.segundos,vuelta.previo.ms)}&nbsp;&nbsp;&nbsp;
+                    {this.imprimirHora(vuelta.actual.horas,vuelta.actual.minutos,vuelta.actual.segundos,vuelta.actual.ms)}
                 </li>
             )
         }).reverse();

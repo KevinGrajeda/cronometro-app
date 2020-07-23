@@ -65,11 +65,16 @@ class Cronometro extends React.Component{
     }
     msAHoras(milis){
         let ms=milis;
+        let horas=0;
+        if(ms>=3.6e6){
+            horas=(ms/3.6e6)|0;
+            ms%=3.6e6;
+        }
         const minutos=(ms/60000)|0;
-        ms=ms-minutos*60000;
+        ms%=60000;
         const segundos=(ms/1000)|0;
-        ms=(ms-segundos*1000)/10|0;
-        return {ms,segundos,minutos};
+        ms=(ms%1000)/10|0;
+        return {horas,ms,segundos,minutos};
     }
     render(){
         return(
