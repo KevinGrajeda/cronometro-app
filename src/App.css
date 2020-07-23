@@ -7,10 +7,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 
 :root{
+  /*--principal:#F5F5F5;
+  --secundario:#272b35;
+  --tercer:#F61067;
+  --cuarto:#962557;*/
   --principal:#272b35;
   --secundario:#F5F5F5;
   --tercer:#F61067;
   --cuarto:#962557;
+}
+html{
+  font-size: 27vw;
 }
 body{
   background-color: var(--principal);
@@ -18,17 +25,21 @@ body{
 }
 .central{
   text-align: center;
+  font-size: 1rem;
 }
 .contenedor-circulo{
-  width: 65vw;
-  height: 65vw;
-  margin: 30vw auto;
-  font-size: 27vw;
-  transition: font-size 0.03s linear;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin: 1rem auto 0vw auto;
+  font-size: 100%;
+  transition: font-size 0.03s linear,margin-top 1s;
+}
+.contenedor-circulo.arriba{
+  margin-top: 8%;
 }
 .contenedor-circulo.small{
   
-  font-size: 19vw;
+  font-size: 70%;
   transition: font-size 0.8s ease-in-out;
 }
 .circulo{
@@ -40,7 +51,7 @@ body{
   box-shadow:rgba(255,255,255,0) 0px 0px 0vw 0vw inset ;
   font-weight: 600;
   user-select: none;
-  border: 2vw solid var(--tercer);
+  border: 0.06rem solid var(--tercer);
   transition:box-shadow 0.2s;
   position: relative;
   box-sizing: border-box;
@@ -55,54 +66,96 @@ body{
   border-radius: 50%;
   z-index: -1;
   box-shadow:
-  rgba(0,0,0,0.6) 0vw 6vw 10vw -5vw inset,rgba(0,0,0,0.6) 0vw 6vw 10vw -2vw ;
+  rgba(0,0,0,0.3) 0vw 0.2rem 0.3rem -0.17rem inset,rgba(0,0,0,0.6) 0vw 0.2rem 0.3rem -0.17rem ;
 }
 .animacion{
   transition:box-shadow 0s;
-  box-shadow: rgba(255, 255, 255,0.1) 0px 0vw 0vw 32.5vw inset;
+  box-shadow: rgba(255, 255, 255,0.1) 0px 0vw 0vw 1.2rem inset;
 }
 .contador{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-shadow: 0 0 0.2rem var(--tercer) ;
+  text-shadow: 0 0 0.0rem var(--tercer) ;
   transition: text-shadow 0.2s ease;
 }
 .contador.pausa{
-  text-shadow: 0 0 0.6rem var(--tercer) ;
+  text-shadow: 0 0 0.1rem var(--tercer) ;
 }
 .ms{
   font-size: 50%;
 }
-.contenedor-botones{
-  transition: 0.3s ;
-  height: 17vw;
-  width: 50vw;
+.contenedor-vueltas{
+  font-size:17%;
   margin: auto;
-  position:relative;
+  margin-top: 0.3rem;
+  height: 1.7rem;
+  width: 60%;
+  position: relative;
 }
 
-.boton i{
+.contenedor-vueltas::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  box-shadow: var(--principal) 0px -0.49rem 0.2rem -0.26rem inset;
+  pointer-events: none;
+}
+.contenedor-vueltas ul::-webkit-scrollbar {
+  display: none;
+}
+.contenedor-vueltas ul{
+  list-style-type: none;
+  height: 99%;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  z-index: -1;
+}
+.numero-vuelta{
+  color:var(--cuarto);
+}
+.contenedor-botones{
+  transition: bottom 1s ;
+  height: 0.7rem;
+  width: 50%;
+  margin: 0;
+  position: absolute;
+  transform: translate(50%);
+  bottom: 10%;
+  right: 50%;
+}
+.contenedor-botones.abajo{
+  bottom: 10%;
+}
+button{
+  font-size: 1rem;
+}
+.boton{
   color: var(--secundario);
-  font-size:8vw;
-  line-height: 17vw;
+  font-size:0.4rem;
+  line-height: 0;
 }
 .boton i.fa-play{
   
-  margin-left: 2vw;
+  margin-left: 0.1rem;
 }
 .boton{
   position: absolute;
   border-radius: 50%;
-  width: 17vw;
-  height: 17vw;
+  width: 0.7rem;
+  height: 0.7rem;
   cursor: pointer;
   border: none;
   /*background-color: var(--tercer);*/
   background:linear-gradient(30deg,var(--cuarto) ,var(--tercer));
   /*box-shadow: 0 0 5vw 0px rgba(0,0,0,0.2);*/
-  box-shadow: rgba(255,255,255,0) 0px 0px 0vw 0vw inset,0 0.3rem 5vw 0px rgba(0,0,0,0.5);
+  box-shadow: rgba(255,255,255,0) 0px 0px 0vw 0vw inset,0 0.03rem 0.15rem 0px rgba(0,0,0,0.3);
   
   right: 50%;
   transform: translate(50%,0) scale(1,1);
@@ -111,26 +164,31 @@ body{
 }
 .stop{
   opacity: 0;
+  pointer-events: none;
 }
 .vuelta{
   opacity: 0;
   z-index: 1;
+  pointer-events: none;
 }
 .derecha{
   transform: translate(50%,0) scale(0.7,0.7);
   right: 0%;
   opacity: 1;
+  pointer-events: initial;
 }
 .izquierda{
   transform: translate(50%,0) scale(0.7,0.7);
   right: 100%;
   opacity: 1;
+  pointer-events: initial;
 }
 .transparente{
   opacity: 0;
+  pointer-events: none;
 }
 .animacion-boton{
-  box-shadow: rgba(255,255,255,0.35) 0px 0vw 0vw 8.5vw inset,0 0 5vw 0px rgba(0,0,0,0.5);
+  box-shadow: rgba(255,255,255,0.35) 0px 0vw 0vw 0.35rem inset,0 0.03rem 0.15rem 0px rgba(0,0,0,0.3);
   transition: 0s;
 }
 button{
@@ -144,12 +202,7 @@ button{
   user-select: none;
 }
 @media only screen and (min-width: 768px) {
-  .contenedor-circulo{
-    width: 25rem;
-    height: 25rem;
-    margin:0;
-  }
-  .boton{
-    margin:0;
+  html{
+    font-size: 10vw;
   }
 }
