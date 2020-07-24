@@ -4,8 +4,10 @@ import Cronometro from './components/Cronometro';
 
 function App() {
   return (
-    <Cronometro/>
-    
+    <div>
+      <Cronometro/>
+      <footer><a href="https://github.com/KevinGrajeda">Kevin Grajeda 2020</a></footer>
+    </div>
   );
 }
 

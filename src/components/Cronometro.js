@@ -22,21 +22,27 @@ class Cronometro extends React.Component{
         this.contar=this.contar.bind(this);
         this.detener=this.detener.bind(this);
         this.vuelta=this.vuelta.bind(this);
+        this.space=this.space.bind(this);
+        this.actualizarHead=this.actualizarHead.bind(this);
     }
     iniciar(){
         if(this.state.inicio){
             this.setState({pausa:true});
             this.setState({msPrev:this.state.milisegundos,inicio:null});
             clearInterval(this.state.idTimer);
+            clearInterval(this.state.idTimer2);
         }else{
             this.setState({pausa:false});
             this.setState({inicio:new Date()});
             const idInterval=setInterval(this.contar,10);
-            this.setState({idTimer:idInterval,iniciado:true});
+            const idInterval2=setInterval(this.actualizarHead,333);
+            this.setState({idTimer:idInterval,idTimer2:idInterval2,iniciado:true});
         }
     }
     detener(){
         clearInterval(this.state.idTimer);
+        document.title="Cronómetro";
+        clearInterval(this.state.idTimer2);
         this.setState({
             iniciado:false,
             msPrev:0,
@@ -52,6 +58,18 @@ class Cronometro extends React.Component{
         let count =this.state.msPrev+ +current - +this.state.inicio;
         this.setState({milisegundos:count});
     }
+    actualizarHead(){
+        let ms=this.state.milisegundos;
+        let horas=0;
+        if(ms>=3.6e6){
+            horas=(ms/3.6e6)|0;
+            ms%=3.6e6;
+        }
+        const minutos=(ms/60000)|0;
+        ms%=60000;
+        const segundos=(ms/1000)|0;
+        document.title=`${horas>0?horas+":":""}${minutos>=10?minutos:"0"+minutos}:${segundos>=10?segundos:"0"+segundos}`
+    }
     vuelta(){
         this.setState(prev=>{
             return {
@@ -63,6 +81,7 @@ class Cronometro extends React.Component{
         };
         });
     }
+    
     msAHoras(milis){
         let ms=milis;
         let horas=0;
@@ -76,10 +95,22 @@ class Cronometro extends React.Component{
         ms=(ms%1000)/10|0;
         return {horas,ms,segundos,minutos};
     }
+    space(event){
+        if(event.keyCode === 32 || event.keyCode === 13) {
+            this.iniciar();
+        }
+    }
+    componentDidMount(){
+        document.addEventListener("keydown", this.space, false);
+    }
+    componentWillUnmount(){
+        document.removeEventListener("keydown", this.space, false);
+    }
+
     render(){
         return(
         <div className="central">
-            <Display iniciar={this.iniciar} ms={this.state.milisegundos} pausa={this.state.pausa} iniciado={this.state.iniciado} vueltas={this.state.vueltas.length}/>
+            <Display iniciar={this.iniciar} tiempo={this.msAHoras(this.state.milisegundos)} pausa={this.state.pausa} iniciado={this.state.iniciado} vueltas={this.state.vueltas.length}/>
             <Vueltas vueltas={this.state.vueltas}/>
             <Botones detener={this.detener} iniciar={this.iniciar} vuelta={this.vuelta} iniciado={this.state.iniciado} vueltas={this.state.vueltas.length} pausa={this.state.pausa} />
         </div>

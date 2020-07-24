@@ -18,7 +18,7 @@ class Display extends React.Component{
         this.setState({touch:true});
     }
     render(){
-        let ms=this.props.ms;
+        /*let ms=this.props.ms;
         let horas=0;
         if(ms>=3.6e6){
             horas=(ms/3.6e6)|0;
@@ -27,7 +27,11 @@ class Display extends React.Component{
         const minutos=(ms/60000)|0;
         ms%=60000;
         const segundos=(ms/1000)|0;
-        ms=(ms%1000)/10|0;
+        ms=(ms%1000)/10|0;*/
+        let ms=this.props.tiempo.ms;
+        let segundos=this.props.tiempo.segundos;
+        let minutos=this.props.tiempo.minutos;
+        let horas=this.props.tiempo.horas;
         const classContador="contador"+(this.props.pausa && this.props.iniciado ?" pausa":"");
         const classContenedor="contenedor-circulo"+(horas>0?" smaller":horas>0||minutos>0|| segundos>58?" small":"")
         +(this.props.vueltas>0?" arriba":"");

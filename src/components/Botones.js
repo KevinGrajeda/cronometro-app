@@ -46,7 +46,7 @@ class Botones extends React.Component{
         const  classContenedor="contenedor-botones"+(this.props.vueltas>0?" abajo":"")
         return(
             <div className={classContenedor}>
-                <button className={claseStop}
+                <button className={claseStop} aria-label="detener"
                     onTouchStart={evt=>this.iniciarAnimacion(1)}
                     onMouseDown={evt=>this.iniciarAnimacion(1)}
                     onTouchEnd={evt=>this.detener(evt)}
@@ -54,7 +54,7 @@ class Botones extends React.Component{
                 >
                     <i className="fas fa-stop"></i>
                 </button>
-                <button className={claseInicio}
+                <button className={claseInicio} aria-label="iniciar"
                     onTouchStart={evt=>this.iniciarAnimacion(2)}
                     onMouseDown={evt=>this.iniciarAnimacion(2)}
                     onTouchEnd={evt=>this.play(evt)}
@@ -65,7 +65,7 @@ class Botones extends React.Component{
                         <i className="fas fa-play"></i>
                     }
                 </button>
-                <button className={claseLap}
+                <button className={claseLap} aria-label="vuelta"
                     onTouchStart={evt=>this.iniciarAnimacion(3)}
                     onMouseDown={evt=>this.iniciarAnimacion(3)}
                     onTouchEnd={evt=>this.vuelta(evt)}
