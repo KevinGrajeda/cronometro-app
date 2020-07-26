@@ -30,12 +30,13 @@ body{
 .contenedor-circulo{
   width: 2.4rem;
   height: 2.4rem;
-  margin: 1rem auto 0vw auto;
+  margin: 1rem auto -0.8rem auto;
   font-size: 100%;
-  transition: font-size 0.03s linear,margin-top 1s,margin-left 1s ease-in-out;
+  transition: font-size 0.03s linear,transform 1s,margin-left 1s ease-in-out;
 }
 .contenedor-circulo.arriba{
-  margin-top: 8%;
+  transform: translateY(-30%);
+  
 }
 .contenedor-circulo.small{
   
@@ -52,11 +53,12 @@ body{
   height: 100%;
   border-radius: 50%;
   /*box-shadow: rgba(255,255,255,0) 0px 0px 0vw 0vw inset,0 0 12vw 0px rgba(0,0,0,0.3);*/
-  box-shadow:rgba(255,255,255,0) 0px 0px 0vw 1.2rem inset ;
+  box-shadow:rgba(255,255,255,0) 0px 0px 0vw 0rem inset ;
   font-weight: 600;
   user-select: none;
   border: 0.06rem solid var(--tercer);
-  transition:box-shadow 0;
+  transition:box-shadow 0.3s ease-out;
+  outline: 1rem white;
   position: relative;
   box-sizing: border-box;
 }
@@ -69,8 +71,7 @@ body{
   left: 0;
   border-radius: 50%;
   z-index: -1;
-  box-shadow:
-  rgba(0,0,0,0.3) 0vw 0.2rem 0.3rem -0.17rem inset,rgba(0,0,0,0.6) 0vw 0.2rem 0.3rem -0.17rem ;
+  box-shadow:rgba(0,0,0,0.6) 0vw 0.2rem 0.3rem -0.17rem ;
 }
 .animacion{
   transition:box-shadow 0s;
@@ -178,14 +179,12 @@ button{
   pointer-events: none;
 }
 .derecha{
-  transform: translate(50%,0) scale(0.7,0.7);
-  right: 0%;
+  transform: translate(200%,0) scale(0.7,0.7);
   opacity: 1;
   pointer-events: initial;
 }
 .izquierda{
-  transform: translate(50%,0) scale(0.7,0.7);
-  right: 100%;
+  transform: translate(-100%,0) scale(0.7,0.7);
   opacity: 1;
   pointer-events: initial;
 }
@@ -217,7 +216,7 @@ footer a{
   font-weight: 600;
   text-decoration: none;
   color:rgba(255,255,255,1);
-  opacity: 0.04;
+  opacity: 0.03;
   -webkit-tap-highlight-color: rgba(255,255,255,0.03);
 }
 @media only screen and (min-width: 768px), (orientation: landscape) {
@@ -232,8 +231,7 @@ footer a{
     max-width: 85vh;
   }
   .contenedor-circulo.arriba{
-    margin-left: 2rem;
-    margin-top: 2%;
+    transform: translateX(-120%);
   }
   .contenedor-botones{
     bottom: 3%;
