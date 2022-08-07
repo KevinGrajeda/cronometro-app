@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d57e48388a9f6dac6060fb79ac049111",
+    "revision": "8d7bdd528cdfe5be36a2fe4cdb9675be",
     "url": "/cronometro-app/index.html"
   },
   {
-    "revision": "7d1a40c0ae11b3544e2e",
-    "url": "/cronometro-app/static/css/main.dfd02c27.chunk.css"
+    "revision": "2187e18220b97bed2a57",
+    "url": "/cronometro-app/static/css/main.251d7e98.chunk.css"
   },
   {
     "revision": "1025dc9566ec82965999",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cronometro-app/static/js/2.a6973dbe.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7d1a40c0ae11b3544e2e",
-    "url": "/cronometro-app/static/js/main.2ddc890f.chunk.js"
+    "revision": "2187e18220b97bed2a57",
+    "url": "/cronometro-app/static/js/main.6b88bcfe.chunk.js"
   },
   {
     "revision": "1cf99078e6618940350b",
