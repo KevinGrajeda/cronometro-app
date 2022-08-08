@@ -25,7 +25,7 @@
   </a>
 </div>
 
-An stopwatch app made for working in web and as a progressive web app, both for mobile and desktop.
+A stopwatch app made to work on the web and as a progressive web app, both for mobile and desktop.
 
 <!-- GETTING STARTED -->
 ## Getting Started
