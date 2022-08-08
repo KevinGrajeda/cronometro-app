@@ -16,7 +16,8 @@
 ## About The Project
 
 [![License](https://img.shields.io/github/license/KevinGrajeda/cronometro-app?color=blue)](https://github.com/KevinGrajeda/cronometro-app/blob/master/LICENSE.md)
-![React](https://badges.aleen42.com/src/react.svg)
+[![React](https://badges.aleen42.com/src/react.svg)](https://reactjs.org/)
+[![Version](https://img.shields.io/github/v/release/KevinGrajeda/cronometro-app)](https://github.com/KevinGrajeda/cronometro-app/releases/tag/v.1.0.0)
 
 <div align="center">
   <a href="https://kevingrajeda.github.io/cronometro-app/" align="center">
@@ -51,7 +52,7 @@ To get a local copy up and running follow these simple example steps.
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE.md` for more information.
 
 
 <!-- CONTACT -->
