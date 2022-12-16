@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/cronometro-app/static/css/main.251d7e98.chunk.css",
-    "main.js": "/cronometro-app/static/js/main.6b88bcfe.chunk.js",
-    "main.js.map": "/cronometro-app/static/js/main.6b88bcfe.chunk.js.map",
-    "runtime-main.js": "/cronometro-app/static/js/runtime-main.daee897c.js",
-    "runtime-main.js.map": "/cronometro-app/static/js/runtime-main.daee897c.js.map",
-    "static/js/2.a6973dbe.chunk.js": "/cronometro-app/static/js/2.a6973dbe.chunk.js",
-    "static/js/2.a6973dbe.chunk.js.map": "/cronometro-app/static/js/2.a6973dbe.chunk.js.map",
+    "main.css": "/cronometro-app/static/css/main.254d157a.chunk.css",
+    "main.js": "/cronometro-app/static/js/main.7e87fc7e.chunk.js",
+    "main.js.map": "/cronometro-app/static/js/main.7e87fc7e.chunk.js.map",
+    "runtime-main.js": "/cronometro-app/static/js/runtime-main.3b0bfc5b.js",
+    "runtime-main.js.map": "/cronometro-app/static/js/runtime-main.3b0bfc5b.js.map",
+    "static/js/2.527752fb.chunk.js": "/cronometro-app/static/js/2.527752fb.chunk.js",
+    "static/js/2.527752fb.chunk.js.map": "/cronometro-app/static/js/2.527752fb.chunk.js.map",
     "index.html": "/cronometro-app/index.html",
-    "precache-manifest.7614a71be0983cab959c1e84a3d8473a.js": "/cronometro-app/precache-manifest.7614a71be0983cab959c1e84a3d8473a.js",
+    "precache-manifest.0dc102ec042982f63289427bfc749d50.js": "/cronometro-app/precache-manifest.0dc102ec042982f63289427bfc749d50.js",
     "service-worker.js": "/cronometro-app/service-worker.js",
-    "static/css/main.251d7e98.chunk.css.map": "/cronometro-app/static/css/main.251d7e98.chunk.css.map",
-    "static/js/2.a6973dbe.chunk.js.LICENSE.txt": "/cronometro-app/static/js/2.a6973dbe.chunk.js.LICENSE.txt"
+    "static/css/main.254d157a.chunk.css.map": "/cronometro-app/static/css/main.254d157a.chunk.css.map",
+    "static/js/2.527752fb.chunk.js.LICENSE.txt": "/cronometro-app/static/js/2.527752fb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.daee897c.js",
-    "static/js/2.a6973dbe.chunk.js",
-    "static/css/main.251d7e98.chunk.css",
-    "static/js/main.6b88bcfe.chunk.js"
+    "static/js/runtime-main.3b0bfc5b.js",
+    "static/js/2.527752fb.chunk.js",
+    "static/css/main.254d157a.chunk.css",
+    "static/js/main.7e87fc7e.chunk.js"
   ]
 }
