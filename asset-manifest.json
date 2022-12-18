@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/cronometro-app/static/css/main.254d157a.chunk.css",
-    "main.js": "/cronometro-app/static/js/main.7e87fc7e.chunk.js",
-    "main.js.map": "/cronometro-app/static/js/main.7e87fc7e.chunk.js.map",
+    "main.js": "/cronometro-app/static/js/main.0bfe7df9.chunk.js",
+    "main.js.map": "/cronometro-app/static/js/main.0bfe7df9.chunk.js.map",
     "runtime-main.js": "/cronometro-app/static/js/runtime-main.3b0bfc5b.js",
     "runtime-main.js.map": "/cronometro-app/static/js/runtime-main.3b0bfc5b.js.map",
     "static/js/2.527752fb.chunk.js": "/cronometro-app/static/js/2.527752fb.chunk.js",
     "static/js/2.527752fb.chunk.js.map": "/cronometro-app/static/js/2.527752fb.chunk.js.map",
     "index.html": "/cronometro-app/index.html",
-    "precache-manifest.c33c6a625f20d78538eda0749db3e27d.js": "/cronometro-app/precache-manifest.c33c6a625f20d78538eda0749db3e27d.js",
+    "precache-manifest.5058e789cea167e31d1b17f66f1826f0.js": "/cronometro-app/precache-manifest.5058e789cea167e31d1b17f66f1826f0.js",
     "service-worker.js": "/cronometro-app/service-worker.js",
     "static/css/main.254d157a.chunk.css.map": "/cronometro-app/static/css/main.254d157a.chunk.css.map",
     "static/js/2.527752fb.chunk.js.LICENSE.txt": "/cronometro-app/static/js/2.527752fb.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.3b0bfc5b.js",
     "static/js/2.527752fb.chunk.js",
     "static/css/main.254d157a.chunk.css",
-    "static/js/main.7e87fc7e.chunk.js"
+    "static/js/main.0bfe7df9.chunk.js"
   ]
 }
