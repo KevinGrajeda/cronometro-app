@@ -69,7 +69,7 @@ class Cronometro extends React.Component{
         const minutos=(ms/60000)|0;
         ms%=60000;
         const segundos=(ms/1000)|0;
-        navigator.setAppBadge(segundos);
+        navigator.setAppBadge(minutos>0?minutos:segundos);
         document.title=`${horas>0?horas+":":""}${minutos>=10?minutos:"0"+minutos}:${segundos>=10?segundos:"0"+segundos}`
     }
     vuelta(){
